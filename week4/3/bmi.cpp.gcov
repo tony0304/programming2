@@ -1,0 +1,26 @@
+        -:    0:Source:bmi.cpp
+        -:    0:Graph:bmi.gcno
+        -:    0:Data:bmi.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://bmi.cpp
+        -:    2:#include <math.h>
+        -:    3:
+function _Z10computeBMIii called 5 returned 100% blocks executed 100%
+        5:    4:double computeBMI(int kg, int height)
+        -:    5:{
+        5:    6:    double BMI = 0.0, M = height/100.0;
+        5:    7:    if (kg<=0 || height<=0) return 0;
+branch  0 taken 4 (fallthrough)
+branch  1 taken 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 3
+        3:    8:    BMI = round(100*kg/(M*M))/100; //四捨五入取兩位小數
+        3:    9:    if (BMI <18.5) return -1;
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        2:   10:    if (BMI >24) return -2;
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   11:    return BMI;
+        -:   12:}
